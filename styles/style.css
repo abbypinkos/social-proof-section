@@ -1,3 +1,5 @@
+/*WIP - Still need to add media queries. This is the default, mobile layout.*/
+
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
 
 :root {
@@ -6,4 +8,112 @@
     --dark-grayish-magenta: hsl(303, 10%, 53%);
     --light-grayish-magenta: hsl(300, 24%, 96%);
     --white: hsl(0, 0%, 100%);
+}
+
+body {
+    background: top 0 left 0 / 100% no-repeat url(../images/bg-pattern-top-mobile.svg),
+    bottom 0 right 0 / 100% no-repeat url(../images/bg-pattern-bottom-mobile.svg);
+    background-color: var(--white);
+    font-family: 'Spartan', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    display: grid;
+    place-items: center;
+}
+
+main {
+    width: 88vw;
+    padding-block: 5rem;
+}
+
+.about {
+    text-align: center;
+}
+
+.about__title {
+    color: var(--very-dark-magenta);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2rem;
+}
+
+.about__text {
+    color: var(--dark-grayish-magenta);
+    padding-block: 1.5rem;
+    font-weight: 500;
+    font-size: .88rem;
+    line-height: 1.5rem;
+}
+
+.ratings-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-block: 1.5rem;
+}
+
+.rating {
+    background-color: var(--light-grayish-magenta);
+    border-radius: .5rem;
+    width: 100%;
+    padding-block: 1rem;
+}
+
+.rating__stars {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.rating__text {
+    color: var(--very-dark-magenta);
+    font-size: .8rem;
+    font-weight: 700;
+    text-align: center;
+    padding-top: .75rem;
+}
+
+.testimonials-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: var(--white);
+    font-size: .8rem;
+    padding-block: 1.5rem;
+}
+
+.testimonial {
+    background-color: var(--very-dark-magenta);
+    border-radius: .5rem;
+    padding: 0 2rem;
+}
+
+.testimonial-wrapper {
+    display: flex;
+    align-items: center;
+    padding-top: 2.5rem;
+    line-height: 1.3rem;
+}
+
+.testimonial__img {
+    border-radius: 50%;
+    width: 2.5rem;
+    height: auto;
+    margin-right: 1.5rem;
+}
+
+.testimonial__name {
+    display: block;
+    font-weight: 700;
+}
+
+.testimonial__name--verified {
+    color: var(--soft-pink);
+    font-weight: 400;
+}
+
+.testimonial__text {
+    line-height: 1.4rem;
+    padding: 1.75rem 0 2rem 0;
 }
