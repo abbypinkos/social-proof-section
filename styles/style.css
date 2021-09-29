@@ -21,13 +21,20 @@ body {
     place-items: center;
 }
 
-main {
+.grid-container {
     width: 88vw;
     padding-block: 5rem;
+    display: grid;
+    place-items: center;
+    grid-template-areas: 
+        "about"
+        "ratings"
+        "testimonials";
 }
 
 .about {
     text-align: center;
+    grid-area: about;
 }
 
 .about__title {
@@ -50,6 +57,7 @@ main {
     flex-direction: column;
     gap: 1rem;
     padding-block: 1.5rem;
+    grid-area: ratings;
 }
 
 .rating {
@@ -81,6 +89,7 @@ main {
     color: var(--white);
     font-size: .8rem;
     padding-block: 1.5rem;
+    grid-area: testimonials;
 }
 
 .testimonial {
@@ -116,4 +125,86 @@ main {
 .testimonial__text {
     line-height: 1.4rem;
     padding: 1.75rem 0 2rem 0;
+}
+
+@media only screen and (min-width: 1201px) { 
+    body {
+        background: top 0 left 0 / 40% no-repeat url(../images/bg-pattern-top-desktop.svg),
+        bottom 0 right 0 / 75% no-repeat url(../images/bg-pattern-bottom-desktop.svg);
+    }
+
+    .grid-container {
+        padding: 0;
+        width: 77vw;
+        height: 80vh;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "about ratings"
+        "testimonials testimonials";
+    }
+
+    .about {
+        text-align: left;
+    }
+
+    .about-wrapper {
+        width: 80%;
+    }
+
+    .about__title {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+
+    .about__text {
+        padding-block: .75rem;
+    }
+
+    .ratings-container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .rating:nth-child(1) {
+        align-self: flex-start;
+    }
+    
+    .rating:nth-child(2) {
+        align-self: center;
+    }
+
+    .rating:nth-child(3) {
+        align-self: flex-end;
+    }
+
+    .rating {
+        width: 88%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        padding: 1.2rem 0;
+    }
+
+    .rating__text {
+        padding: 0;
+    }
+
+    .testimonials-container {
+        flex-direction: row;
+        gap: 2rem;
+    }
+    
+    .testimonial:nth-child(1) {
+        justify-self: flex-start;
+    }
+
+    .testimonial:nth-child(2) {
+        transform: translateY(1rem);
+    }
+
+    .testimonial:nth-child(3) {
+        transform: translateY(2rem);
+    }
 }
